@@ -1,0 +1,310 @@
+/* ==========GLOBAL VARIABLES============== */
+
+* {
+    font-family: 'Segoe UI', Roboto;
+}
+
+.pt-10 {
+    padding-top: 6rem!important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-green {
+    color: #22c28a;
+}
+
+.font-size-1 {
+    font-size: 14px;
+    color: #666666;
+}
+
+.font-size-4 {
+    font-size: 4.5rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid #22C28A;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    /* color: #212529; */
+    /* background-color: #fff; */
+    /* border-color: #86b7fe; */
+    /* outline: 0; */
+    box-shadow: none;
+    /* background-color: #20b883; */
+    border-color: #20b883;
+}
+
+
+/*==================== NAVBAR=============== */
+
+.title-logo {
+    width: 112px;
+    height: 21px;
+    left: 129px;
+    top: 27px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #636565;
+}
+
+.navbar {
+    padding: 15px 0px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background-eclipse {
+    padding: 0px;
+    margin: 0px;
+    width: 172px;
+    height: 74px;
+    position: absolute;
+    right: -40px;
+    top: 0px;
+    background: url(/assets/img/Ellipse25.png) no-repeat;
+}
+
+label {
+    color: #ACACAD;
+    font-weight: 600;
+}
+
+
+/* ===========MAIN================= */
+
+main {
+    position: relative;
+}
+
+.main::before {
+    content: "";
+    background-image: url(/assets/img/Rectangle.png);
+    background-color: #EEEFF3;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+
+/* main::before {
+    background-image: url(/assets/img/Ellipse25.png);
+    width: 172px;
+    height: 74px;
+} */
+
+#eclipse1 {
+    background: url(/assets/img/Ellipse1.png) no-repeat;
+    position: fixed;
+    width: 92px;
+    height: 73px;
+    left: 0px;
+    bottom: 0px;
+}
+
+#eclipse2 {
+    background: url(/assets/img/Ellipse2.png) no-repeat;
+    position: fixed;
+    width: 76px;
+    height: 76px;
+    left: 1100px;
+    top: 92px;
+}
+
+#eclipse3 {
+    background: url(/assets/img/Ellipse3.png) no-repeat;
+    position: fixed;
+    width: 49px;
+    height: 49px;
+    left: 473px;
+    bottom: 30px;
+}
+
+#eclipse4 {
+    background: url(/assets/img/Ellipse4.png) no-repeat;
+    position: fixed;
+    width: 49px;
+    height: 49px;
+    right: 719px;
+    top: 300px;
+}
+
+#eclipse5 {
+    background: url(/assets/img/Ellipse5.png) no-repeat;
+    position: fixed;
+    width: 49px;
+    height: 49px;
+    left: 933px;
+    top: 681px;
+}
+
+#eclipse6 {
+    background: url(/assets/img/Ellipse6.png) no-repeat;
+    position: fixed;
+    width: 49px;
+    height: 49px;
+    left: 1143px;
+    bottom: 295px;
+}
+
+#eclipse7 {
+    background: url(/assets/img/Ellipse7.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    right: 785px;
+    top: 200px;
+}
+
+#eclipse8 {
+    background: url(/assets/img/Ellipse8.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    left: 385px;
+    top: 201px;
+}
+
+#eclipse9 {
+    background: url(/assets/img/Ellipse9.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    left: 16px;
+    top: 102px;
+}
+
+#eclipse10 {
+    background: url(/assets/img/Ellipse10.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    left: 211px;
+    top: 728px;
+}
+
+#eclipse11 {
+    background: url(/assets/img/Ellipse11.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    left: 1443px;
+    top: 692px;
+}
+
+#eclipse12 {
+    background: url(/assets/img/Ellipse12.png) no-repeat;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    left: 1449px;
+    top: 563px;
+}
+
+#eclipse13 {
+    background: url(/assets/img/Ellipse13.png) no-repeat;
+    position: fixed;
+    width: 172px;
+    height: 172px;
+    left: 569px;
+    top: 334px;
+}
+
+#eclipse14 {
+    background: url(/assets/img/Ellipse14.png) no-repeat;
+    position: fixed;
+    width: 83px;
+    height: 62px;
+    right: 768px;
+    top: 776px;
+}
+
+#eclipse15 {
+    background: url(/assets/img/Ellipse15.png) no-repeat;
+    position: fixed;
+    width: 83px;
+    height: 83px;
+    left: 1181px;
+    top: 688px;
+}
+
+#eclipse16 {
+    background: url(/assets/img/Ellipse16.png) no-repeat;
+    position: fixed;
+    width: 251px;
+    height: 251px;
+    right: 641px;
+    top: 84px;
+}
+
+
+/*  */
+
+
+/* =========MAIN LEFT============= */
+
+.add-contact {
+    background: url(/assets/img/Maskgroup.png) no-repeat #22C28A;
+    color: white;
+}
+
+.border-contact {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    /* padding: 50px; */
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 152%);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.add-contact-button {
+    font-weight: 700;
+    color: #22C28A;
+    padding: 0.50rem 1.7rem;
+}
+
+.elipse-people {
+    background: url(/assets/img/Ellipse-people.png) no-repeat;
+    background-position-y: bottom;
+}
+
+
+/* ===========MAIN RIGHT============= */
+
+.contact-name {
+    margin-top: 5px;
+    line-height: 15px;
+}
+
+.contact-email {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+    line-height: 15px;
+}

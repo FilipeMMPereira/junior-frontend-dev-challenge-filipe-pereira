@@ -1,0 +1,169 @@
+<template>
+  <div>
+    <Navbar />
+    <main>
+      <Background />
+      <!-- Container -->
+      <section class="container">
+        <section class="row pt-5">
+          <!-- Left -->
+          <article class="col-md-4">
+            <!-- Adicionar Contacto -->
+            <section class="card add-contact text-center mb-5">
+              <div class="card-body">
+                <div
+                  class="
+                    border-contact
+                    d-flex
+                    justify-content-center
+                    align-items-center
+                    mt-3
+                  "
+                >
+                  <span>+</span>
+                </div>
+                <h6 class="card-subtitle mb-2 mt-4 text-muted text-white">
+                  Adicionar Contacto
+                </h6>
+
+                <button
+                  type="button"
+                  class="btn btn-light mt-3 mb-2 add-contact-button"
+                >
+                  Novo Contacto
+                </button>
+              </div>
+            </section>
+            <!-- End Adicionar Contacto -->
+            <!-- Banner -->
+            <section class="card mt-2 mb-5">
+              <div class="card-body p-5 pt-2 pb-0">
+                <!-- <h5 class="card-title">Card title</h5> -->
+
+                <h3 class="card-subtitle mb-2 mt-4 text-body">
+                  Cuidamos do seu <br />
+                  <span class="text-green"> Negocio.</span>
+                </h3>
+
+                <p class="pt-3">
+                  Uma plataforma especializada na prospecção de novos clientes
+                  para o seu negócio.
+                </p>
+              </div>
+              <div class="elipse-people">
+                <img src="/assets/img/inspired.png" alt="" class="img-fluid" />
+              </div>
+            </section>
+            <!-- End Banner -->
+          </article>
+          <!-- End Left -->
+
+          <!-- Rigth -->
+          <article class="col-md-8">
+            <section class="card mb-5">
+              <div class="card-body p-5 pt-2 pb-4">
+                <div class="row align-items-end mt-3">
+                  <div class="col-md-2">
+                    <h1 class="text-green font-size-4 fw-bold">45</h1>
+                  </div>
+                  <div class="col-md-10">
+                    <h1>
+                      Contactos <span class="text-green">Adicionados</span>
+                    </h1>
+                    <p>
+                      Uma plataforma especializada na prospecção de novos
+                      clientes para o seu negócio.
+                    </p>
+                  </div>
+                </div>
+                <!-- Search -->
+                <form action="" class="pt-4">
+                  <div class="row align-items-center">
+                    <div class="col-md-4 form-group">
+                      <label for="">Nome</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <label for="">Empresa</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-md-4 form-group d-flex justify-content-end">
+                      <button class="btn">
+                        <img src="/assets/img/Vector.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <!-- End Search -->
+              </div>
+            </section>
+            <!-- Contact List -->
+            <section class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body p-4 pt-2 pb-4">
+                    <section class="row mt-3">
+                      <article class="col-md-3">
+                        <img
+                          src="/assets/img/inspired.png"
+                          class="rounded-circle"
+                          width="50px"
+                          height="50px"
+                          alt="..."
+                        />
+                      </article>
+                      <article class="col-md-9">
+                        <div class="contact-name">Meysam Nassour</div>
+                        <span class="contact-email">Sincere@april.biz</span>
+                      </article>
+                    </section>
+                    <div class="p-3 pl-0">
+                      <div class="font-size-1">
+                        <span class="fw-bold">Empresa:</span> Romaguera-Crona
+                      </div>
+                      <div class="font-size-1">
+                        <span class="fw-bold">website:</span> hildegard.org
+                      </div>
+                      <div class="font-size-1">
+                        <span class="fw-bold">Codigo Postal:</span> 92998-3874
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+</template>
+<script>
+import Navbar from "./components/Navbar.vue";
+import Background from "./components/Background.vue";
+import axios from 'axios'
+
+export default {
+  components: {
+    Navbar,
+    Background,
+  },
+  mounted:function(){
+    this.index()
+  },
+  methods:{
+    index(){
+      // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+      let data=""
+      axios.get('https://34100289-review-master-8dyme2.preview.eks.technoplus.link/api/v1/contacts',data,{
+        headers:{
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Access-Control-Allow-Origin':'*'
+        }
+      }).then(doc=>{
+        console.log(doc)
+      }).catch(error=>{console.log(error)})
+    }
+  }
+};
+</script>
