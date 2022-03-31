@@ -99,7 +99,7 @@
             </section>
             <!-- Contact List -->
             <section class="row">
-              <div class="col-md-4">
+              <div class="col-md-4" v-for="(contactInfo , index) in contacts" v-bind:key="index">
                 <div class="card">
                   <div class="card-body p-4 pt-2 pb-4">
                     <section class="row mt-3">
@@ -113,19 +113,19 @@
                         />
                       </article>
                       <article class="col-md-9">
-                        <div class="contact-name">Meysam Nassour</div>
-                        <span class="contact-email">Sincere@april.biz</span>
+                        <div class="contact-name">{{contactInfo.name}}</div>
+                        <span class="contact-email">{{contactInfo.email}}</span>
                       </article>
                     </section>
                     <div class="p-3 pl-0">
                       <div class="font-size-1">
-                        <span class="fw-bold">Empresa:</span> Romaguera-Crona
+                        <span class="fw-bold">Empresa:</span> {{contactInfo.company.name}}
                       </div>
                       <div class="font-size-1">
-                        <span class="fw-bold">website:</span> hildegard.org
+                        <span class="fw-bold">website:</span> {{contactInfo.website}}
                       </div>
                       <div class="font-size-1">
-                        <span class="fw-bold">Codigo Postal:</span> 92998-3874
+                        <span class="fw-bold">Codigo Postal:</span> {{contactInfo.address.zipCode}}
                       </div>
                     </div>
                   </div>
@@ -144,6 +144,22 @@ import Background from "./components/Background.vue";
 import axios from 'axios'
 
 export default {
+  data:function(){
+    return{
+      contacts:[],
+      contact:{
+        name:'',
+        email:'',
+        company:'',
+        phone:'',
+        address:'',
+        city:'',
+        state:'',
+        zip:'',
+        country:''
+      }
+    }
+  },
   components: {
     Navbar,
     Background,
@@ -154,14 +170,10 @@ export default {
   methods:{
     index(){
       // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-      let data=""
-      axios.get('https://34100289-review-master-8dyme2.preview.eks.technoplus.link/api/v1/contacts',data,{
-        headers:{
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Access-Control-Allow-Origin':'*'
-        }
-      }).then(doc=>{
-        console.log(doc)
+     
+      axios.get('https://34100289-review-master-8dyme2.preview.eks.technoplus.link/api/v1/contacts').then(doc=>{
+        console.log(doc.data)
+        this.contacts=doc.data
       }).catch(error=>{console.log(error)})
     }
   }
