@@ -1,8 +1,10 @@
 <template>
   <div>
     <Navbar />
+    <ModalForm />
     <main>
       <Background />
+      
       <!-- Container -->
       <section class="container">
         <section class="row pt-5">
@@ -29,10 +31,12 @@
                 <button
                   type="button"
                   class="btn btn-light mt-3 mb-2 add-contact-button"
+                  id="open-modal-contact"
                 >
                   Novo Contacto
                 </button>
               </div>
+              
             </section>
             <!-- End Adicionar Contacto -->
             <!-- Banner -->
@@ -99,35 +103,59 @@
             </section>
             <!-- Contact List -->
             <section class="row">
-              <div class="col-md-4" v-for="(contactInfo , index) in contacts" v-bind:key="index">
+              <div
+                class="col-md-4 pb-3"
+                v-for="(contactInfo, index) in contacts"
+                v-bind:key="index"
+              >
                 <div class="card">
-                  <div class="card-body p-4 pt-2 pb-4">
+                  <div class="card-body p-3 pt-2 pb-2">
                     <section class="row mt-3">
                       <article class="col-md-3">
                         <img
                           src="/assets/img/inspired.png"
                           class="rounded-circle"
-                          width="50px"
-                          height="50px"
+                          width="55px"
+                          height="55px"
                           alt="..."
                         />
                       </article>
                       <article class="col-md-9">
-                        <div class="contact-name">{{contactInfo.name}}</div>
-                        <span class="contact-email">{{contactInfo.email}}</span>
+                        <div class="contact-name">{{ contactInfo.name }}</div>
+                        <span class="contact-email">{{
+                          contactInfo.email
+                        }}</span>
                       </article>
                     </section>
-                    <div class="p-3 pl-0">
+                    <section class="pt-2" style="margin-left: 1.5em">
                       <div class="font-size-1">
-                        <span class="fw-bold">Empresa:</span> {{contactInfo.company.name}}
+                        <span class="fw-bold">Empresa:</span>
+                        {{ contactInfo.company.name }}
                       </div>
                       <div class="font-size-1">
-                        <span class="fw-bold">website:</span> {{contactInfo.website}}
+                        <span class="fw-bold">website:</span>
+                        {{ contactInfo.website }}
                       </div>
                       <div class="font-size-1">
-                        <span class="fw-bold">Codigo Postal:</span> {{contactInfo.address.zipCode}}
+                        <span class="fw-bold">Codigo Postal:</span>
+                        {{ contactInfo.address.zipCode }}
                       </div>
-                    </div>
+                    </section>
+                    <section
+                      class="row align-items-center pb-2"
+                      style="margin-left: 0.8em"
+                    >
+                      <article class="col-md-10">
+                        <div class="phone-number">
+                          <span>+258 </span> {{ contactInfo.phone }}
+                        </div>
+                      </article>
+                      <article class="col-md-2">
+                        <button class="btn p-0" style="margin-top: 0.8em">
+                          <img src="/assets/img/minimize2.png" alt="" />
+                        </button>
+                      </article>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -141,41 +169,50 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Background from "./components/Background.vue";
-import axios from 'axios'
+import ModalForm from "./components/ModalForm.vue";
+import axios from "axios";
 
 export default {
-  data:function(){
-    return{
-      contacts:[],
-      contact:{
-        name:'',
-        email:'',
-        company:'',
-        phone:'',
-        address:'',
-        city:'',
-        state:'',
-        zip:'',
-        country:''
-      }
-    }
+  data: function () {
+    return {
+      contacts: [],
+      contact: {
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+      },
+    };
   },
   components: {
     Navbar,
     Background,
+    ModalForm,
   },
-  mounted:function(){
-    this.index()
+  mounted: function () {
+    this.index();
   },
-  methods:{
-    index(){
+  methods: {
+    index() {
       // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-     
-      axios.get('https://34100289-review-master-8dyme2.preview.eks.technoplus.link/api/v1/contacts').then(doc=>{
-        console.log(doc.data)
-        this.contacts=doc.data
-      }).catch(error=>{console.log(error)})
-    }
-  }
+
+      axios
+        .get(
+          "https://34100289-review-master-8dyme2.preview.eks.technoplus.link/api/v1/contacts"
+        )
+        .then((doc) => {
+          console.log(doc.data);
+          this.contacts = doc.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
