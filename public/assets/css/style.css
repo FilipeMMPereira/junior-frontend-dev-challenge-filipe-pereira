@@ -37,6 +37,10 @@
     width: 80%;
 }
 
+.font-size-5 {
+    font-size: 20px
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -362,4 +366,34 @@ main {
     /* border-radius: 0px; */
     background-color: #22c28a;
     font-weight: bold;
+}
+
+.contact-modal-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.contact-modal-email {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #999999;
+}
+
+.icon-edited {
+    font-size: 36px;
+    padding-left: 1em;
+    padding-right: 0.5em;
+    padding-top: 0.6em;
+    color: #959595;
+}
+
+.modal-details-font {
+    font-size: 24px;
+}
+
+.icon-delete {
+    color: red;
+    font-size: 36px;
 }

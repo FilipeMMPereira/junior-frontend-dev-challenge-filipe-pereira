@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <ModalForm />
+    <ModalShow v-bind:details="details"/>
     <main>
       <Background />
       
@@ -106,7 +107,7 @@
               <div
                 class="col-md-4 pb-3"
                 v-for="(contactInfo, index) in contacts"
-                v-bind:key="index"
+                v-bind:key="index" 
               >
                 <div class="card">
                   <div class="card-body p-3 pt-2 pb-2">
@@ -151,7 +152,7 @@
                         </div>
                       </article>
                       <article class="col-md-2">
-                        <button class="btn p-0" style="margin-top: 0.8em">
+                        <button class="btn p-0" style="margin-top: 0.8em" v-on:click.prevent="modalShow(contactInfo)">
                           <img src="/assets/img/minimize2.png" alt="" />
                         </button>
                       </article>
@@ -170,22 +171,34 @@
 import Navbar from "./components/Navbar.vue";
 import Background from "./components/Background.vue";
 import ModalForm from "./components/ModalForm.vue";
+import ModalShow from "./components/ModalShow.vue";
 import axios from "axios";
 
 export default {
   data: function () {
     return {
       contacts: [],
-      contact: {
+      details:{
         name: "",
         email: "",
-        company: "",
         phone: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
+        company: {
+          name: "",
+          catchPhrase: "",
+          bs: "",
+        },
+        address: {
+          street: "",
+          suite: "",
+          city: "",
+          zipCode: "",
+        },
+        website: "",
+        company: {
+          name: "",
+          catchPhrase: "",
+          bs: "",
+        },
       },
     };
   },
@@ -193,9 +206,11 @@ export default {
     Navbar,
     Background,
     ModalForm,
+    ModalShow
   },
   mounted: function () {
     this.index();
+
   },
   methods: {
     index() {
@@ -213,6 +228,11 @@ export default {
           console.log(error);
         });
     },
+    modalShow(contactInfo){
+      this.details=contactInfo;
+      // console.log(contactInfo)
+      document.getElementById('modal-details').classList.remove('d-none');
+    }
   },
 };
 </script>
